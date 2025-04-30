@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Won !</title>
+    <link rel="stylesheet" href="stylemain.css">
+    <script src="winpage.js" defer></script>
+</head>
+<body>
+    <div class="text" >
+      <h1>Yay! You won!</h1>
+    </div>
+    <div class="gif" >
+       <img src="image/youwon.gif" alt="gif">
+    </div>
+    <div class="score-display" class="text"></div>
+    <div class="btn" >
+        <div class="retbtn" id="retbtn">
+           <button id="returnbtn">Return</button>
+        </div>
+        <div class="nextbtn" id="nextbtn">
+          <button id="nextlevelbtn" >Next Level</button>
+        </div>
+    </div>
+    <script>
+        // Afficher le score actuel
+        document.addEventListener('DOMContentLoaded', function() {
+            const score = sessionStorage.getItem('score') || '0';
+            const totalQuestions = 10;
+            const scoreDisplay = document.createElement('div');
+            scoreDisplay.className = 'text';
+            scoreDisplay.style.fontSize = '18px';
+            scoreDisplay.textContent = `Score: ${score}/${totalQuestions}`;
+            document.querySelector('.score-display').appendChild(scoreDisplay);
+        });
+    </script>
+</body>
+</html>
